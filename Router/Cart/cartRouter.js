@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
 
 
     router.get("/", async (req, res) => {
-      const query=req.query
+      const {query}=req.query
         
         try { 
           const cart = await Cart.find(query);
