@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
 
 
   router.get("/", async (req, res) => {
-    const query=req.query
+    const {query}=req.query
       
       try { 
         let order = await Order.find(query)
