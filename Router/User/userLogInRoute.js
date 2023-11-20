@@ -35,10 +35,12 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.post("/one",async(req,res)=>{
+router.get("/one",async(req,res)=>{
+  const query=req.query
+  console.log(query)
   try {
-    const user=await User.findOne({email:req.body.email})
-    
+    const user=await User.findOne(query)
+    console.log(user)
     if (!user) {
       return res.status(404).json({ message: "Can not get User" });
     }
