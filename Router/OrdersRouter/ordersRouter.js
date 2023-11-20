@@ -51,7 +51,7 @@ router.post("/", async (req, res) => {
 
     
     router.get("/admin", async (req, res) => {
-      const query=req.query
+      const {query}=req.query
         
         try { 
           let order
