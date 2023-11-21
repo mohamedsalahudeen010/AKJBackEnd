@@ -42,4 +42,24 @@ router.post("/", async (req, res) => {
   }
 });
 
+
+router.get("/one",async(req,res)=>{
+  const query=req.query
+  console.log(query)
+  try {
+    const user=await Admin.findOne(query)
+    console.log(user)
+    if (!user) {
+      return res.status(404).json({ message: "Can not get User" });
+    }
+    return res.status(200).json({user})
+  
+  } 
+  catch (error) {
+    console.log("error: ", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+ 
+})
+
 export const adminLoginRouter = router;
