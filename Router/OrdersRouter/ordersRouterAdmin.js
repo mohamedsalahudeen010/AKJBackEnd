@@ -7,7 +7,7 @@ const router=express.Router();
 
   
     router.get("/", async (req, res) => {
-      const {query}=req.query
+      const query=req.query
         
         try { 
           let order
