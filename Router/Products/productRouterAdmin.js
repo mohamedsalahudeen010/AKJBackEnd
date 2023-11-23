@@ -18,9 +18,10 @@ router.get("/", async (req, res) => {
   });
 
 
+ 
   router.post("/", async (req, res) => {
     try {
-      let product = await Products.findOne({$and:[{name:{$eq:req.body.name}},{quantity:{$eq:req.body.quantity}},{type:{$eq:req.body.type}},{type2:{$eq:req.body.type2}}]});;
+      let product = await Products.findOne({$and:[{name:{$eq:req.body.name}},{varient:{$eq:req.body.varient}}]});;
       console.log(product)
       if(product){
         return  res.status(409).json({message:"Product Already Exist"})
@@ -32,6 +33,7 @@ router.get("/", async (req, res) => {
       res.status(500).json("Server Error");
     }
   });
+
 
 
   router.put("/:id", async (req, res) => {
