@@ -23,7 +23,7 @@ const productScheme= mongoose.Schema({
         maxlength:32,
         trim:true
     },
-    type2:{
+    brand:{
         type:String,
         maxlength:32,
         trim:true
