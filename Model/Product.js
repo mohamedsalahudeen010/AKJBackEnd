@@ -9,7 +9,7 @@ const productScheme= mongoose.Schema({
     prize:{
         type:Number, 
     },
-    quantity:{
+    varient:{
         type:String,
     },
     image:{
