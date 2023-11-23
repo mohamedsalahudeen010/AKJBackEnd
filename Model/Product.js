@@ -28,6 +28,16 @@ const productScheme= mongoose.Schema({
         maxlength:32,
         trim:true
     },
+    productGroup:{
+        type:String,
+        maxlength:32,
+        trim:true
+    },
+    productSubGroup:{
+        type:String,
+        maxlength:32,
+        trim:true
+    },
     stock:{
         type:Number,
         required:true
